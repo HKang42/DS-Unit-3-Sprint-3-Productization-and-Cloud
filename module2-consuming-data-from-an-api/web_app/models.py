@@ -26,9 +26,13 @@ class Tweet(db.Model):
     full_text = db.Column(db.String(500))
     embedding = db.Column(db.PickleType)
 
-    # define a .user attribute that joins with the user table to get the user
-    # for a tweet
+    # join the tweet table with the user table using the foreign key.
+    # let's us access user information for a tweet and vice versa (bi-directional)
     user = db.relationship("User", backref=db.backref("tweets", lazy=True))
+
+    # interpreter examples to demonstrate bidirectionality
+    # db_user.tweets[0] -> goes to a user and get's first tweet
+    # db_user.tweets[0].user -> goes to a user, get's first tweet, and gets the user
 
 def parse_records(database_records):
     """
