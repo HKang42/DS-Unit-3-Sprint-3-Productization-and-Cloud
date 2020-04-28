@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>My Starter Web App | Helps students learn how to use the Flask Python package.</title>
+    <title>Aie Quality in Los Angeles</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
 
@@ -25,8 +25,7 @@
     <!-- see: https://jinja.palletsprojects.com/en/2.11.x/tricks/ -->
     <!-- see: https://getbootstrap.com/docs/4.0/components/navbar/ -->
     {% set nav_links = [
-      ('/', 'prediction_form', 'Make Predictions'),
-      ('/books/new', 'new_book', 'New Book')
+      ('/', 'refresh', "This button does nothing")
     ] -%}
     {% set active_page = active_page|default('index') -%}
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">

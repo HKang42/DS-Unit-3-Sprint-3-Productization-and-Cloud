@@ -1,0 +1,21 @@
+{% extends "bootstrap_layout.html" %}
+
+{% block content %}
+
+    <h1>Air Pollution in LA</h1>
+    <p>{{ message }}</p>
+
+    {% if records %}
+        <ul>
+        {% for data_point in records %}
+
+            <li> {{"Time: "}} {{ data_point.datetime }} &emsp; {{"Air Quality (pm): "}} {{ data_point.value }}</li>
+
+{% endfor %}
+        </ul>
+
+    {% else %}
+        <p>No records in Database</p>
+    {% endif %}
+
+{% endblock %}

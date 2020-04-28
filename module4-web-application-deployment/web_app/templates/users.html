@@ -1,0 +1,23 @@
+{% extends "bootstrap_layout.html" %}
+{% set active_page = "users" %}
+
+{% block content %}
+
+    <h1>List of Users Page</h1>
+    <p>{{ message }}</p>
+
+    {% if users %}
+        <ul>
+        {% for user in users %}
+
+<!--        <li>{{ user.screen_name }} {{ user.followers_count }}</li> -->
+            <li>{{ "Screen name: " + user.screen_name + "\t\tFollower Count: "}} {{user.followers_count }}</li>
+
+{% endfor %}
+        </ul>
+
+    {% else %}
+        <p>No users in Database</p>
+    {% endif %}
+
+{% endblock %}
